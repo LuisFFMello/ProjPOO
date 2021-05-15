@@ -33,7 +33,7 @@ public class CadastrarAnimal extends javax.swing.JInternalFrame {
         initComponents();
         this.idAlteracao = idAlteracao;
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto","root","admin");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto","root","");
             String sql = "select * from Animal where IdAnimal = ? ";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setInt(1, idAlteracao);
@@ -200,7 +200,7 @@ public class CadastrarAnimal extends javax.swing.JInternalFrame {
         try{
             if(idAlteracao == 0){
                 Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                        + "projeto","root","admin");  
+                        + "projeto","root","");  
                 String sql = "insert into Animal(Nome,NmrChip,Raca,DtNascimento) values (?,?,?,?)";
                 PreparedStatement stmt = con.prepareStatement(sql);
                 stmt.setString(1, this.txtNome.getText());
@@ -214,7 +214,7 @@ public class CadastrarAnimal extends javax.swing.JInternalFrame {
                 con.close();
             }else{
                 Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                        + "projeto","root","admin");  
+                        + "projeto","root","");  
                 String sql = "update Animal set Nome=?,NmrChip=?,Raca=?,DtNascimento=? where idAnimal = ?";
                 PreparedStatement stmt = con.prepareStatement(sql);
                 stmt.setString(1, this.txtNome.getText());

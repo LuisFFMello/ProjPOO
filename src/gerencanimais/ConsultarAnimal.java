@@ -186,7 +186,7 @@ public class ConsultarAnimal extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto","root","admin");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto","root","");
             String sql = "select * from Animal ";
             if(!txtNome.getText().equals(""))
                 sql = sql + " where Nome LIKE ? ";
@@ -214,7 +214,7 @@ public class ConsultarAnimal extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try{
             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                    + "projeto","root","admin");
+                    + "projeto","root","");
             String sql = "delete from Animal where IDAnimal = ?";
             PreparedStatement stmt = con.prepareStatement(sql);
             int linha = this.jtAnimal.getSelectedRow();
