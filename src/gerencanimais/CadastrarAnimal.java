@@ -44,7 +44,7 @@ public class CadastrarAnimal extends javax.swing.JInternalFrame {
                 txtNome.setText(rs.getString("Nome"));
                 txtNmrChip.setText(rs.getString("NmrChip"));
                 txtRaca.setText(rs.getString("Raca"));
-                java.util.Date dt = new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("DtNascimento"));
+                java.util.Date dt = new SimpleDateFormat("yyyy/MM/dd").parse(rs.getString("DtNascimento"));
                 txtDtnascimento.setText(new SimpleDateFormat("dd/MM/yyyy").format(dt));
             }
             stmt.close();
